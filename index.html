@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>three.js中文网:http://www.webgl3d.cn/</title>
+
+</head>
+
+
+    
+
+<body style="background:#555555;">
+    <div id="container">
+        <div id="per">进度条</div>
+    </div>
+    <div style="height:55px;background-color:#444444;">上面布局</div>
+    <div id="left" style="position:absolute;top:60px;background-color:#444444;width:195px;">左侧布局</div>
+    <div id="webgl" style="position:absolute;top:60px;left:200px;background-color:#444444;">互动操作
+        <div class="pos">
+            <div id="red" class="bu">红</div>
+            <div id="green" class="bu" style="margin-left:10px;">绿</div>
+            <div id="big" class="bu" style="margin-left:10px;">放大</div>
+            <button type="button"name="按钮"id="download"class="bu"style="margin-left:10px;color:blue;" onclick="saveFile()">截图</button>
+        </div>
+    </div>
+    <script>
+        const width = window.innerWidth - 200;
+        const height = window.innerHeight - 60;
+        document.getElementById('left').style.height = height + 'px';
+        document.getElementById('webgl').style.height = height + 'px';
+        document.getElementById('webgl').style.width = width + 'px';
+       
+    </script>
+    <!-- <script>
+        function saveFile(){
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(new Blob(['文件']));
+            link.download = '文件名称.txt';
+            link.click();
+        }
+    </script> -->
+    <!-- <div id="webgl" style="margin-top: 0px;margin-left:0px;"></div> -->
+    
+    <style>
+        .pos {
+            display: flex;
+            align-items: center;
+        }
+        .bu {
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        #red {
+            background-color: red;
+        }
+        #green {
+            background-color: green;
+        }
+        #big {
+            background-color: blue;
+        }
+    </style>
+   
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.module.js",
+                "three/addons": "https://cdn.jsdelivr.net/npm/three@0.154.0/examples/jsm"
+               
+            }
+        }
+    </script>
+    <script src="./index.js" type="module">
+    </script>
+    <script>
+        // let i =0;
+        // function render(){
+        //  i += 1;
+        //  console.log('i',i)
+        //  requestAnimationFrame(render);
+        // }
+        // render();
+    </script>
+    <style>
+        body{
+         overflow:hidden; /*隐藏滚动条*/
+         margin:0px; /*外边距设置为0*/
+        }
+    </style>
+</body>
+
+</html>
