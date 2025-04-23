@@ -16,6 +16,7 @@ matFolder.close();
 const textureCube = new THREE.CubeTextureLoader()
 .setPath('../textures/')
 .load(['studio_small_08_r.jpg','studio_small_08_l.jpg','studio_small_08_u.jpg','studio_small_08_d.jpg','studio_small_08_b.jpg','studio_small_08_f.jpg']);
+textureCube.encoding = THREE.sRGBEncoding;
 const percentDiv = document.getElementById("per");//获取进度条元素
 loader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/gltf/DragonAttenuation.glb', function (gltf) {
     // console.log('gltf',gltf.children);
